@@ -14,6 +14,6 @@ class Events extends Model
 
     public function users()
     {
-        return $this->hasMany(User::class, 'user_id');
+        return $this->belongsToMany(User::class, 'user_id');
     }
 }

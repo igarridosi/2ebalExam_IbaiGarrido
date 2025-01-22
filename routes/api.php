@@ -23,7 +23,9 @@ Route::delete('events/{event}', [EventsController::class, 'destroy']);
 
 //DENTIST
 Route::get('dentist', [UsersController::class, 'showDentists']);
+Route::get('attendants', [UsersController::class, 'getAttendants']);
 Route::get('dentists/{dentist}/events', [UsersController::class, 'dentistEvents']);
+Route::post('enroll', [UsersController::class, 'enroll']);
 
 /*
 Route::middleware('auth:sanctum')->group(function () {

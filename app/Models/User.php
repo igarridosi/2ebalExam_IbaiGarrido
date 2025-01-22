@@ -27,6 +27,7 @@ class User extends Authenticatable
         'role',
     ];
 
+    /*
     public function isAdmin()
     {
         return $this->role === 'admin';
@@ -35,10 +36,11 @@ class User extends Authenticatable
     {
         return $this->role === 'dentist';
     }
+        */
 
     public function events()
     {
-        return $this->hasMany(Events::class, 'event_id');
+        return $this->belongsToMany(Events::class, 'event_id');
     }
 
     /**
